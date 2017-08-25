@@ -1,0 +1,62 @@
+#pragma once
+
+namespace Linux {
+    class UARTDriver;
+    class RCInput_UART;
+    class RCInput_UDP;
+    class I2CDevice;
+    class I2CDeviceManager;
+    class I2CDriver;
+    class SPIDeviceManager;
+    class SPIDeviceDriver;
+    class AnalogSource;
+    class AnalogIn;
+    class Storage;
+    class GPIO_Sysfs;
+    class Storage;
+    class DigitalSource;
+    class DigitalSource_Sysfs;
+    class PeriodicThread;
+    class PWM_Sysfs;
+    class PWM_Sysfs_Bebop;
+    class PWM_Sysfs_Base;
+    class RCInput;
+    class Semaphore;
+    class Scheduler;
+    class Util;
+    class RCOutput_Sysfs;
+    class VideoIn;
+    class CameraSensor;
+    class ToneAlarm;
+    class Thread;
+    class Heat;
+
+#if 0
+    class GPIO_BBB;
+    class GPIO_RPI;
+    class RCInput_PRU;
+    class RCInput_AioPRU;
+    class RCInput_RPI;
+    class RCInput_Raspilot;
+    class RCInput_Navio2;
+    class RCInput_ZYNQ;
+    class RCInput_DSM;
+    class RCOutput_PRU;
+    class RCOutput_AioPRU;
+    class RCOutput_PCA9685;
+    class RCOutput_Raspilot;
+    class RCOutput_ZYNQ;
+    class RCOutput_Bebop;
+    class RCOutput_QFLIGHT;
+    class UtilRPI;
+    class ToneAlarm_Raspilot;
+    class RPIOUARTDriver;
+    class HeatPwm;
+    class CameraSensor_Mt9v117;
+    class OpticalFlow_Onboard;
+    class Flow_PX4;
+    class Perf_Lttng;
+    class Storage_FRAM;
+    class SPIUARTDriver;
+#endif
+}

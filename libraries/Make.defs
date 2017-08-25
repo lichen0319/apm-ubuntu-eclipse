@@ -1,0 +1,34 @@
+
+PWD := $(shell pwd)
+
+INC := -I$(PWD) -I$(PWD)/AP_HAL -I$(PWD)/AP_HAL_LINUX -I$(PWD)/AP_Scheduler -I$(PWD)/AP_Common -I$(PWD)/AP_Math -I$(PWD)/AP_HAL_Empty -I$(PWD)/AP_ADC -I$(PWD)/StorageManager
+
+CROSS_COMPILE := 
+
+AR  := $(CROSS_COMPILE)ar
+CC  := $(CROSS_COMPILE)gcc
+CXX := $(CROSS_COMPILE)g++
+
+AFLAGS   :=
+CFLAGS   := $(INC)
+CXXFLAGS := $(INC) -std=gnu++11
+
+LIBS = -lm -pthread -lrt
+
+
+export Q := @
+
+define COMPILE
+        $(Q) echo "CC: $1"
+        $(Q) $(CC) -c $(CFLAGS) $1 -o $2
+endef
+
+define COMPILEXX
+        $(Q) echo "CXX: $1"
+        $(Q) $(CXX) -c $(CXXFLAGS) $1 -o $2
+endef
+
+define ARCHIVE
+        $(Q) echo "AR: $2"
+        $(Q) $(AR) -r $1 $(2) || { echo "$(AR) $1 FAILED!" ; exit 1 ; }
+endef
